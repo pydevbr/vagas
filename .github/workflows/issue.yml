@@ -1,13 +1,13 @@
 name: Labeling new issue
 on:
   issues:
-    types: ['opened']
+      types: ['opened', 'edited']
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: Renato66/auto-label@v2
+      - uses: Renato66/auto-label@v2.2.0
         with:
-          repo-token: ${{ secrets.GITHUB_ACTIONS }}
-          labels-synonyms: '{"🦠 Remoto durante pandemia":["Vaga Remota durante a pandemia"]}'
-          labels-not-allowed: '["Stale","Pendente de informações","Falta de informações"]'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          labels-not-allowed: '["Falta Informações","Request changes","stale"]'
+          labels-synonyms: '{"pleno":["mid", "middle", "plain"],"remoto":["remote", "home-office", "home"], "hibrido":["hybrid"], "presencial":["office"]}'
