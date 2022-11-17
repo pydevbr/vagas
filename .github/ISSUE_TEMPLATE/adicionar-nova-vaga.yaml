@@ -7,7 +7,7 @@ body:
       value: |
         ## :warning: Observações
 
-        - Só publique vagas para back-end Python
+        - Só publique vagas para back-end
         - Não faça destinção de gênero no título da vaga
         - Use: "Pessoa desenvolvedora" ou "Python Developer" ao invés de "Desenvolvedor Back-End" \o/
 
@@ -100,7 +100,7 @@ body:
 
   - type: input
     validations:
-      required: true
+      required: false
     attributes:
       label: Keywords
       placeholder: nestjs mysql
@@ -130,6 +130,8 @@ body:
           required: false
         - label: PJ
           required: false
+        - label: Cooperado
+          required: false
 
   - type: checkboxes
     attributes:
@@ -154,4 +156,15 @@ body:
           required: false
         - label: Projeto
           required: false
-
+          
+  - type: dropdown
+    attributes:
+      label: Remuneração
+      options:
+        - R$ 1k - R$ 5k
+        - R$ 5k - R$ 10k
+        - R$ 10k - R$ 15k
+        - R$ 15k - R$ 20k
+        - R$ 20k+
+    validations:
+      required: false
